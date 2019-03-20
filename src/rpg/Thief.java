@@ -1,19 +1,18 @@
 package rpg;
 
-
-public class Wizard extends Chracter{
-	public int mp;
+public class Thief extends Chracter{
+	public int speed;
 
 	@Override
 	public void introduce() {
-		System.out.println("私は"+ this.name+"です。");
-		System.out.println("HP:"+ this.hp + "MP:" + this.mp);
+		System.out.println("私は"+ this.name+"だ！");
+		System.out.println("HP:"+ this.hp);
 	}
 
 	@Override
 	public void attack(Enemy e) {
-		// TODO 自動生成されたメソッド・スタブ
 		super.attack(e);
+		System.out.println(this.name+"は、"+e.name+"からアイテムを盗んだ");
 	}
 
 	@Override
