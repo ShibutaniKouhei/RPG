@@ -12,9 +12,9 @@ public class Enemy {
 		System.out.println(this.name+"は、"+ power+ "ポイントのダメージを受けた！");
 		this.hp -= power;
 	}
-	public void attack(Wizard w){
+	public void attack(Chracter c){
 		System.out.println(this.name+"の攻撃！");
-		w.damege(10);
+		c.damege(10);
 	}
 
 }
