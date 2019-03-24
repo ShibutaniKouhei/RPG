@@ -13,7 +13,12 @@ public class ChracterApp {
 		Thief thief = new Thief();
 		thief.hp = 100;
 		thief.name = "泥棒";
-		thief.speed = 30;
+
+		//魔法使いをインスタンス化して情報を代入
+		Wizard wizard = new Wizard();
+		wizard.hp = 100;
+		wizard.mp = 50;
+		wizard.name = "魔法使い";
 
 		//敵をインスタンス化して情報を代入
 		Enemy enemy = new Enemy();
@@ -27,6 +32,10 @@ public class ChracterApp {
 		//泥棒の行動
 		thief.introduce();
 		thief.attack(enemy);
+
+		//魔法使いの行動
+		wizard.introduce();
+		wizard.attack(enemy);
 
 		//敵の攻撃
 		enemy.introduce();

@@ -1,7 +1,6 @@
 package rpg;
 
 public class Thief extends Chracter{
-	public int speed;
 
 	@Override
 	public void introduce() {
@@ -12,6 +11,10 @@ public class Thief extends Chracter{
 	@Override
 	public void attack(Chracter c) {
 		super.attack(c);
+		steal(c);
+	}
+
+	public void steal(Chracter c){
 		System.out.println(this.name+"は、"+c.name+"からアイテムを盗んだ");
 	}
 }
