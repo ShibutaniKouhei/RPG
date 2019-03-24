@@ -29,6 +29,7 @@ public class ChracterApp {
 		thief.attack(enemy);
 
 		//敵の攻撃
+		enemy.introduce();
 		enemy.attack(knight);
 	}
 
