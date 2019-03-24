@@ -10,14 +10,14 @@ public class Knight extends Chracter{
 	}
 
 	@Override
-	public void attack(Enemy e) {
-		super.attack(e);
-		this.powerAttack(e);
+	public void attack(Chracter c) {
+		super.attack(c);
+		this.powerAttack(c);
 
 	}
-	public void powerAttack(Enemy e){
+	public void powerAttack(Chracter c){
 		System.out.println(this.name+"は力強く攻撃した！");
-		e.damage(power);
+		c.damage(this.power);
 	}
 
 

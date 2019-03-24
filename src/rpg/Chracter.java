@@ -9,12 +9,12 @@ public class Chracter {
 		System.out.println("HP:"+ this.hp);
 	}
 
-	public void attack(Enemy e){
+	public void attack(Chracter c){
 		System.out.println(this.name+"の攻撃！");
-		e.damage(5);
+		c.damage(5);
 	}
 
-	public void damege(int power){
+	public void damage(int power){
 		System.out.println(this.name+"は、"+power+"ポイントのダメージを受けた！");
 		this.hp -= power;
 	}

@@ -10,17 +10,8 @@ public class Thief extends Chracter{
 	}
 
 	@Override
-	public void attack(Enemy e) {
-		super.attack(e);
-		System.out.println(this.name+"は、"+e.name+"からアイテムを盗んだ");
+	public void attack(Chracter c) {
+		super.attack(c);
+		System.out.println(this.name+"は、"+c.name+"からアイテムを盗んだ");
 	}
-
-	@Override
-	public void damege(int power) {
-		// TODO 自動生成されたメソッド・スタブ
-		super.damege(power);
-	}
-
-
-
 }
