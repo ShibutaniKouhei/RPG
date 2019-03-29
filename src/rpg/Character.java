@@ -10,11 +10,8 @@ abstract class Character {
 		this.name = name;
 	}
 
-	//自己紹介のメソッド
-	public void introduce(){
-		System.out.println("私は"+ this.name+"です。");
-		System.out.println("HP:"+ this.hp);
-	}
+	//自己紹介の抽象メソッド
+	public abstract void introduce();
 
 	//攻撃用の抽象メソッド
 	public abstract void attack(Character c);
