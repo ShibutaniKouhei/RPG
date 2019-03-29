@@ -1,6 +1,6 @@
 package rpg;
 
-public class Character {
+abstract class Character {
 	private int hp;	//HP
 	private String name;	//名前
 
@@ -16,16 +16,21 @@ public class Character {
 		System.out.println("HP:"+ this.hp);
 	}
 
-	//攻撃用のメソッド
-	public void attack(Character c){
-		System.out.println(this.name+"の攻撃！");
-		c.damage(5);
-	}
+	//攻撃用の抽象メソッド
+	public abstract void attack(Character c);
 
 	//キャラクターがダメージを負うメソッド
 	public void damage(int power){
 		System.out.println(this.name+"は、"+power+"ポイントのダメージを受けた！");
 		this.hp -= power;
+	}
+
+	public boolean isDead(){
+		if(this.hp <= 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	//getter

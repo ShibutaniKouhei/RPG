@@ -20,7 +20,8 @@ public class Wizard extends Character{
 	//攻撃のオーバーライド
 	@Override
 	public void attack(Character c) {
-		super.attack(c);
+		System.out.println(this.getName()+"の攻撃！");
+		c.damage(5);
 		flame(c);
 	}
 
