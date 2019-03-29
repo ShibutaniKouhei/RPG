@@ -16,42 +16,69 @@ public class CharacterApp {
 		players[2] = new Wizard(15,"魔法使い",50);
 
 		//敵をインスタンス化して情報を代入
-		Character enemy = new Enemy(100,"敵");
-		enemy.introduce();
+		Character[] enemys = new Character[2];
+		enemys[0] = new Enemy(60,"敵A");
+		enemys[1] = new Enemy(60,"敵B");
+		//Character enemy = new Enemy(100,"敵");
+		//enemy.introduce();
 
 		//playerの自己紹介
 		for(int i = 0; i < players.length; i++){
 			players[i].introduce();
 		}
+
+		//enemyの自己紹介
+		for(int i = 0; i < enemys.length; i++){
+			enemys[i].introduce();
+		}
 		//敵がプレイヤー攻撃するための乱数
 		Random rnd = new Random();
 
 		while(true){
+			//GameOver判定
 			if(players[0].isDead() && players[1].isDead() && players[2].isDead()){
 				System.out.println("GameOver");
 				break;
-			}else if(enemy.isDead()){
+			//Clear判定
+			}else if(enemys[0].isDead() && enemys[1].isDead()){
 				System.out.println("Clear!");
 				break;
 			}else{
+				//player攻撃ターン
 				for(int i = 0; i < players.length; i++){
-					//playerが死んでいたら攻撃できないように条件分岐
+					//敵の数だけ乱数生成
+					int enemyNum = rnd.nextInt(enemys.length);
+					//死んでいるplyerは攻撃できない
 					if(players[i].isDead()){
 						continue;
 					}else{
-						players[i].attack(enemy);
+						//playerが死んでいるenemyを攻撃できないように条件分岐
+						if(enemys[enemyNum].isDead()){
+							System.out.println(players[i].getName()+"は"+ enemys[enemyNum].getName()+"を攻撃しようとしたが既に死んでいる。");
+							continue;
+						}else{
+							players[i].attack(enemys[enemyNum]);
+							System.out.println(enemys[enemyNum].getName()+"の残り体力"+enemys[enemyNum].getHp());
+						}
 					}
-					System.out.println("敵の残り体力"+enemy.getHp());
 				}
-				//プレイヤーの数だけ乱数生成
-				int value = rnd.nextInt(players.length);
-				//敵が死んでいるplayerを攻撃できないように条件分岐
-				if(players[value].isDead()){
-					System.out.println(enemy.getName()+"は"+players[value].getName()+"を攻撃しようとしたが既に死んでいる。");
-					continue;
-				}else{
-					enemy.attack(players[value]);
-					System.out.println(players[value].getName() + "の残り体力" + players[value].getHp());
+				//enemy攻撃ターン
+				for(int i = 0; i < enemys.length; i++){
+					//プレイヤーの数だけ乱数生成
+					int playerNum = rnd.nextInt(players.length);
+					//死んでいるenemyは攻撃できない
+					if(enemys[i].isDead()){
+						continue;
+					}else{
+						//enemyが死んでいるplayerを攻撃できないように条件分岐
+						if(players[playerNum].isDead()){
+							System.out.println(enemys[i].getName()+"は"+players[playerNum].getName()+"を攻撃しようとしたが既に死んでいる。");
+							continue;
+						}else{
+							enemys[i].attack(players[playerNum]);
+							System.out.println(players[playerNum].getName() + "の残り体力" + players[playerNum].getHp());
+						}
+					}
 				}
 			}
 		}
