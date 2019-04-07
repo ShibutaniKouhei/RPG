@@ -1,6 +1,6 @@
 package rpg;
 
-public class Thief extends Character{
+public class Thief extends Character implements Moveable{
 
 	//コンストラクタ
 	public Thief(int hp, String name) {

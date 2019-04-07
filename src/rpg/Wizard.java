@@ -1,7 +1,7 @@
 package rpg;
 
 
-public class Wizard extends Character{
+public class Wizard extends Character implements Moveable{
 	private int mp;	//MP
 
 	//コンストラクタ

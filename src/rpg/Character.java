@@ -1,6 +1,6 @@
 package rpg;
 
-abstract class Character {
+abstract class Character implements Moveable{
 	private int hp;	//HP
 	private String name;	//名前
 
@@ -10,9 +10,8 @@ abstract class Character {
 		this.name = name;
 	}
 
-	//自己紹介の抽象メソッド
+	//自己紹介メソッド
 	public abstract void introduce();
-
 	//攻撃用の抽象メソッド
 	public abstract void attack(Character c);
 
@@ -20,6 +19,11 @@ abstract class Character {
 	public void damage(int power){
 		System.out.println(this.name+"は、"+power+"ポイントのダメージを受けた！");
 		this.hp -= power;
+	}
+
+	@Override
+	public void move(Character c) {
+		attack(c);
 	}
 
 	public boolean isDead(){

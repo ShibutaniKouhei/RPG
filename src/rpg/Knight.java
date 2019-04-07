@@ -1,6 +1,6 @@
 package rpg;
 
-public class Knight extends Character{
+public class Knight extends Character implements Moveable{
 	private int power;	//力
 
 	//コンストラクタ
@@ -31,6 +31,4 @@ public class Knight extends Character{
 		System.out.println(this.getName()+"は力強く攻撃した！");
 		c.damage(this.power);
 	}
-
-
 }
