@@ -1,18 +1,15 @@
 package rpg;
 
-public class Doraemon implements Moveable{
+public class Doraemon implements Movable{
 
 	private String name;
 	private int hp;
 	private int count = 0;
 	public Doraemon(String name, int hp) {
-		super();
 		this.name = name;
 		this.hp = hp;
 	}
 
-
-	@Override
 	public void introduce() {
 		System.out.println("僕どらえもん！");
 	}
@@ -26,22 +23,5 @@ public class Doraemon implements Moveable{
 		}
 		this.count++;
 	}
-
-	@Override
-	public boolean isDead() {
-
-		return false;
-	}
-
-	@Override
-	public String getName() {
-		return name;
-	}
-
-	@Override
-	public int getHp() {
-		return hp;
-	}
-
 
 }

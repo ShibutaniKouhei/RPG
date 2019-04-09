@@ -1,6 +1,6 @@
 package rpg;
 
-public class Thief extends Character implements Moveable{
+public class Thief extends Character implements Movable{
 
 	//コンストラクタ
 	public Thief(int hp, String name) {
@@ -25,5 +25,10 @@ public class Thief extends Character implements Moveable{
 	//攻撃の際に相手から追加で盗む
 	public void steal(Character c){
 		System.out.println(this.getName()+"は、"+c.getName()+"からアイテムを盗んだ");
+	}
+
+	@Override
+	public void move(Character c) {
+		attack(c);
 	}
 }

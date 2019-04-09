@@ -1,6 +1,6 @@
 package rpg;
 
-public class Enemy extends Character implements Moveable{
+public class Enemy extends Character implements Movable{
 
 	public Enemy(int hp, String name) {
 		super(hp, name);
@@ -16,5 +16,10 @@ public class Enemy extends Character implements Moveable{
 	public void attack(Character c) {
 		System.out.println(this.getName()+"の攻撃！");
 		c.damage(10);
+	}
+
+	@Override
+	public void move(Character c) {
+		attack(c);
 	}
 }

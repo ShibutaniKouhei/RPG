@@ -1,6 +1,6 @@
 package rpg;
 
-abstract class Character implements Moveable{
+abstract class Character{
 	private int hp;	//HP
 	private String name;	//名前
 
@@ -21,11 +21,6 @@ abstract class Character implements Moveable{
 		this.hp -= power;
 	}
 
-	@Override
-	public void move(Character c) {
-		attack(c);
-	}
-
 	public boolean isDead(){
 		if(this.hp <= 0){
 			return true;
@@ -42,7 +37,4 @@ abstract class Character implements Moveable{
 	public String getName() {
 		return name;
 	}
-
-
-
 }

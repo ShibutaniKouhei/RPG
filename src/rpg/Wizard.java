@@ -1,7 +1,7 @@
 package rpg;
 
 
-public class Wizard extends Character implements Moveable{
+public class Wizard extends Character implements Movable{
 	private int mp;	//MP
 
 	//コンストラクタ
@@ -35,5 +35,10 @@ public class Wizard extends Character implements Moveable{
 		}else{
 			System.out.println("MPが足りません！");
 		}
+	}
+
+	@Override
+	public void move(Character c) {
+		attack(c);
 	}
 }
