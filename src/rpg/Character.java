@@ -10,6 +10,12 @@ abstract class Character{
 		this.name = name;
 	}
 
+
+
+	public Character() {
+
+	}
+
 	//自己紹介メソッド
 	public abstract void introduce();
 	//攻撃用の抽象メソッド
